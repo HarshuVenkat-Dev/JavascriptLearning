@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"> </script>
@@ -82,4 +82,243 @@
             </table>
           </form>
     </body>
-</html>
+</html> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+<!-- <html>
+    <p id="one">Hello</p>
+
+    <script>
+        var para = document.getElementById("one");
+        console.log(para);
+        console.log(para.textContent);
+        para.textContent = "bye";
+    </script>
+</html> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<!-- <html> 
+    <h1 id="title">Helloworld</h1>
+    <button onclick="change()">Click me</button>
+    <script> 
+        var title = document.getElementById("title");
+        console.log(title);
+        console.log(title.textContent);
+        function change(){
+            title.textContent = "bye world";
+        }
+    </script>
+</html> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<!-- Exercise -->
+
+<!-- <html> 
+    <input type="number" id="num1" name="num1">
+    <input type="number" id="num2" name="num2">
+    <button onclick="add()">Add</button>
+    <p id="result">Result</p>
+    <script>
+        function add(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var total = parseInt(num1) + parseInt(num2);
+            var result = document.getElementById("result");
+            result.textContent = total;
+            console.log(total);
+
+        }
+    </script>
+</html> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<!-- Guess the number game -->
+<!-- <h1>Guess the number</h1>
+<input id="guessnumber">
+<button onclick="check()">Check</button>
+<p id="result">You are Wrong!/ Right</p>
+<p id="score">10</p>
+<script>
+    var guessnumber = document.getElementById("guessnumber");
+    var result = document.getElementById("result");
+    var score = document.getElementById("score");
+    var scoreValue = 10;
+    var randomnumber = Math.floor(Math.random()*10)+1;
+    var message = document.getElementById("message");
+    function check(){
+        var enterednumber = guessnumber.value;
+        if(randomnumber == enterednumber){
+            console.log("Your are right");  
+            result.textContent = "Your are right";
+            alert("Congratulations! You guessed the number correctly.");
+        }
+        else{
+            scoreValue = scoreValue - 1;
+            score.textContent = "score : "+scoreValue;
+            console.log("Your are wrong"); 
+            result.textContent = "Your are wrong";
+        }
+    }
+</script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<!-- CSS Manipulation -->
+<!-- <style>
+    div{
+        background-color: black;
+        width: 100px;
+        height: 100px;
+        transition: 2s;
+    }
+    .widthmax{
+        width: 900px;
+    }
+    </style>
+    <div id="box"></div>
+    <button onclick="change()">Change color</button>
+    <script>
+        var box = document.getElementById("box");
+
+        function change(){
+            box.style.backgroundColor = "red";
+            box.setAttribute("class","widthmax");
+        }
+    </script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<!-- onkeyup event -->
+    <!-- <input id="text" onkeyup="onkeychange()">
+    <h1 id="result">result</h1>
+    <script>
+        var text = document.getElementById("text");
+        var result = document.getElementById("result");
+        function onkeychange(){
+            result.textContent = text.value;
+        }
+    </script> -->
+
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<!-- Dynamic element creation and appending to the DOM  -->
+    <!-- <button onclick="update()">Add</button>
+    <div id="result"></div>
+    <script>
+       var result = document.getElementById("result");
+       function update(){
+        // result.textContent = "Hello";
+        var h1 = document.createElement("h1");
+        h1.textContent = "Hello";
+        result.append(h1);
+       }
+    </script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+<!--button color change-->
+<!-- <button onclick="changeColor()">Change color</button>
+<script>
+    var button = document.querySelector("button");
+    function changeColor(){
+        button.style.backgroundColor = "red";
+    }
+</script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- How can I make it so that when a user clicks a button, the text from that button is shown in the h1 tag located above it? -->
+
+ <!-- <h1 id="result">Name</h1>
+<button onclick="update(event)">Gowzz</button>
+<button onclick="update(event)">Harsh</button>
+<button onclick="update(event)">Bhushhh</button>
+<script>
+    var result = document.getElementById("result");
+    function update(event){      <!--event will have the entire button element -->
+<!--        result.textContent = event.target.textContent;
+    }
+</script>  
+-->
+
+<!-- ------------------------------------------------------------------------------------- -->
+<!--   -->
+<!-- <h1 id="one" onclick="change(event)">One</h1>
+<h1 id="two" onclick="change(event)">Two</h1>
+<h1 id="three" onclick="change(event)">Three</h1>
+<h1 id="four" onclick="change(event)">Four</h1>
+<h1 id="five" onclick="change(event)">Five</h1>
+
+<script>
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
+    var four = document.getElementById("four");
+    var five = document.getElementById("five");
+
+    function change(event){
+        event.target.remove();
+    }
+</script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!--querySelector, querySelectorAll -->
+<!-- <h1 class="ok">one</h1>
+<h1 class="ok">two</h1>
+<h1 class="ok">three</h1>
+<script>
+    var h1 = document.querySelectorAll(".ok");
+    for(count =0; count<h1.length; count++){
+            console.log(h1[count].textContent);
+    }
+</script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!--append, prepend, insertAdjacentElement -->
+<!-- <div>
+    <h1>John</h1>
+</div>
+
+<script>
+    var div = document.querySelector("div");
+    div.append("Hello");
+    div.prepend("Welcome");
+    var h1 = document.createElement("h1");
+    h1.textContent = "Before";
+    div.insertAdjacentElement("beforebegin", h1);
+</script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!--inner HTML  -->
+<!-- <div id="one">
+    <h1>Hello</h1>
+</div>
+<script>
+    var one = document.getElementById("one").innerHTML;
+    console.log(one);
+    console.log(one.innerHTML);
+    console.log(one.innerHTML = "<h1>bye</h1>");   
+</script> -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+<!--delete item from the list -->
+<!-- <input id="inputbox">
+<button onclick="addItem()">Add</button>
+<ul id="list-container">
+    <li>Hello
+        <button onclick="deleteItem(event)">Delete</button>
+    </li> 
+</ul>
+<script>
+    var ul = document.getElementById("list-container");
+    var input = document.getElementById("inputbox");
+    function addItem(){
+        var listItem= document.createElement("li");
+        // listItem.textContent = input.value;
+        listItem.innerHTML = input.value + ' <button onclick="deleteItem(event)">Delete</button>';
+        ul.append(listItem);
+    }
+    function deleteItem(event){
+        // event.target.remove();
+        event.target.parentElement.remove();
+    }
+</script> -->
+<!-- ------------------------------------------------------------------------------------- -->

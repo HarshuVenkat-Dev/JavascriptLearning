@@ -1,0 +1,84 @@
+<form>
+    <table style="margin:1%;">
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" name="name"></td>
+        </tr>
+
+        <tr>
+            <td><label>Age</label></td>
+            <td><input type="number" name="age"></td>
+        </tr>
+
+        <tr>
+            <td><label>Gender</label></td>
+            <td>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Course</label></td>
+            <td><select name="course">
+                <option value="course1">Javascript</option>
+                <option value="course2">Python</option>
+                <option value="course3">Java</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" name="email"></td>
+        </tr>
+
+            <tr>
+               <td colspan="2" style="text-align: center;">
+                   <button type="submit" onclick="saveData(event)" style = "text-align: center;width: 100%;">Save</button>
+               </td>
+            </tr>
+    </table>
+    <table id="results">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </table>
+</form>
+
+<body>
+    <ol id="result"></ol>
+</body>
+<script src="Map.js"></script>
+<script>
+    var form = document.querySelector("form");
+    var results= document.querySelector("#results");
+    function saveData(event){
+        event.preventDefault();
+        var name = form.elements["name"].value;
+        var age = form.elements["age"].value;
+        var gender = form.elements["gender"].value;
+        var course = form.elements["course"].value;
+        var email = form.elements["email"].value;
+        var row = results.insertRow();
+        var action = document.createElement("button");
+        action.textContent = "Delete";
+        row.insertCell().textContent = name;
+        row.insertCell().textContent = age; 
+        row.insertCell().textContent = gender;      
+        row.insertCell().textContent = course;
+        row.insertCell().textContent = email;
+        row.insertCell().append(action);
+    };
+    function deleteData(event){
+        if(event.target.tagName === "BUTTON"){
+            var row = event.target.parentNode.parentNode;
+            console.log("delete", row);
+            // row.remove();
+        }
+    }
+</script>
